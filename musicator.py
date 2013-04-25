@@ -3,6 +3,7 @@
 
 import os
 import sys
+import subprocess
 
 ###
 # usage
@@ -108,6 +109,7 @@ if (__name__ == "__main__"):
                         if(inList(sys.argv[2], path2playlist)):
                                 playlist = path2playlist+sys.argv[2]
                                 os.execl(program, program, "-playlist", playlist, "-shuffle")
+                                subprocess.call([program, program, "-playlist", playlist, "-shuffle"])
 
                                 ################
                                 #     BOUH !   #
